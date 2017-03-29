@@ -51,6 +51,7 @@ static void BM_returning_vector_with_move(benchmark::State& state) {
             auto v = func1(i);
         }
     }
+    state.SetItemsProcessed(state.iterations());
 }
 
 static void BM_returning_vector_without_move(benchmark::State& state) {
@@ -59,6 +60,7 @@ static void BM_returning_vector_without_move(benchmark::State& state) {
             auto v = func2(i);
         }
     }
+    state.SetItemsProcessed(state.iterations());
 }
 
 static void BM_returning_vector_by_arg(benchmark::State& state) {
@@ -68,6 +70,7 @@ static void BM_returning_vector_by_arg(benchmark::State& state) {
             func3(i, v);
         }
     }
+    state.SetItemsProcessed(state.iterations());
 }
 
 static void BM_returning_vector_by_arg_without_clear(benchmark::State& state) {
@@ -77,6 +80,7 @@ static void BM_returning_vector_by_arg_without_clear(benchmark::State& state) {
             func4(i, v);
         }
     }
+    state.SetItemsProcessed(state.iterations());
 }
 
 BENCHMARK(BM_returning_vector_with_move)->Range(1<<4,1<<8);
