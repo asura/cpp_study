@@ -1,25 +1,25 @@
-#include "thread_safe_queue.h"
+ï»¿#include "thread_safe_queue.h"
 #include "catch.hpp"
 
-SCENARIO("\’z‚µ‚½“_‚Å‚Íempty‚ªtrue‚ğ•Ô‚·", "[unit][ThreadSafeQueue]") {
+SCENARIO("æ§‹ç¯‰ã—ãŸæ™‚ç‚¹ã§ã¯emptyãŒtrueã‚’è¿”ã™", "[unit][ThreadSafeQueue]") {
 	ThreadSafeQueue<int> sut;
 	REQUIRE(sut.empty());
 }
 
-SCENARIO("push‚·‚é‚Æempty‚Ífalse‚ğ•Ô‚·", "[unit][ThreadSafeQueue]") {
+SCENARIO("pushã™ã‚‹ã¨emptyã¯falseã‚’è¿”ã™", "[unit][ThreadSafeQueue]") {
 	ThreadSafeQueue<int> sut;
 	sut.push(1);
 	REQUIRE(! sut.empty());
 }
 
-SCENARIO("push‚µ‚½’l‚Ífront‚Åæ“¾‚Å‚«‚é", "[unit][ThreadSafeQueue]") {
+SCENARIO("pushã—ãŸå€¤ã¯frontã§å–å¾—ã§ãã‚‹", "[unit][ThreadSafeQueue]") {
 	ThreadSafeQueue<int> sut;
 	sut.push(1);
 	auto value = sut.front();
 	REQUIRE(value == 1);
 }
 
-SCENARIO("push‚·‚é‚Æsize‚Åæ“¾‚Å‚«‚é’l‚ª+1‚É‚È‚é", "[unit][ThreadSafeQueue]") {
+SCENARIO("pushã™ã‚‹ã¨sizeã§å–å¾—ã§ãã‚‹å€¤ãŒ+1ã«ãªã‚‹", "[unit][ThreadSafeQueue]") {
 	ThreadSafeQueue<int> sut;
 	REQUIRE(sut.size() == 0);
 
@@ -30,12 +30,12 @@ SCENARIO("push‚·‚é‚Æsize‚Åæ“¾‚Å‚«‚é’l‚ª+1‚É‚È‚é", "[unit][ThreadSafeQueue]") {
 	REQUIRE(sut.size() == 2);
 }
 
-SCENARIO("\’z’¼Œã‚Épop‚·‚é‚Æ—áŠO”­¶", "[unit][ThreadSafeQueue]") {
+SCENARIO("æ§‹ç¯‰ç›´å¾Œã«popã™ã‚‹ã¨ä¾‹å¤–ç™ºç”Ÿ", "[unit][ThreadSafeQueue]") {
 	ThreadSafeQueue<int> sut;
 	REQUIRE_THROWS(sut.pop());
 }
 
-SCENARIO("push¨pop‚É‚æ‚èsize‚ªŒ¸­", "[unit][ThreadSafeQueue]") {
+SCENARIO("pushâ†’popã«ã‚ˆã‚ŠsizeãŒæ¸›å°‘", "[unit][ThreadSafeQueue]") {
 	ThreadSafeQueue<int> sut;
 
 	sut.push(1);
@@ -80,7 +80,7 @@ struct Foo
 
 std::vector<std::string> Foo::log;
 
-TEST_CASE("’Êí‚Ìpush‚ÍƒRƒs[ƒRƒ“ƒXƒgƒ‰ƒNƒ^‚ª“®‚­", "[unit][ThreadSafeQueue]") {
+TEST_CASE("é€šå¸¸ã®pushã¯ã‚³ãƒ”ãƒ¼ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ãŒå‹•ã", "[unit][ThreadSafeQueue]") {
 	ThreadSafeQueue<Foo> sut;
 	Foo::log.clear();
 
@@ -92,7 +92,7 @@ TEST_CASE("’Êí‚Ìpush‚ÍƒRƒs[ƒRƒ“ƒXƒgƒ‰ƒNƒ^‚ª“®‚­", "[unit][ThreadSafeQueue]") {
 	CHECK(Foo::log[1] == "copy constructor");
 }
 
-TEST_CASE("ƒ€[ƒu”Å‚Ìpush‚Íƒ€[ƒuƒRƒ“ƒXƒgƒ‰ƒNƒ^‚ª“®‚­", "[unit][ThreadSafeQueue]") {
+TEST_CASE("ãƒ ãƒ¼ãƒ–ç‰ˆã®pushã¯ãƒ ãƒ¼ãƒ–ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ãŒå‹•ã", "[unit][ThreadSafeQueue]") {
 	ThreadSafeQueue<Foo> sut;
 	Foo::log.clear();
 
@@ -103,7 +103,7 @@ TEST_CASE("ƒ€[ƒu”Å‚Ìpush‚Íƒ€[ƒuƒRƒ“ƒXƒgƒ‰ƒNƒ^‚ª“®‚­", "[unit][ThreadSafeQueue]
 	CHECK(Foo::log[1] == "move constructor");
 }
 
-TEST_CASE("emplace‚ÍƒRƒs[‚³‚ê‚È‚¢", "[unit][ThreadSafeQueue]") {
+TEST_CASE("emplaceã¯ã‚³ãƒ”ãƒ¼ã•ã‚Œãªã„", "[unit][ThreadSafeQueue]") {
 	ThreadSafeQueue<Foo> sut;
 	Foo::log.clear();
 

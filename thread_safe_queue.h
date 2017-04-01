@@ -1,4 +1,4 @@
-#include <deque>
+ï»¿#include <deque>
 #include <mutex>
 
 template<typename T, typename Container = std::deque<T>>
@@ -11,49 +11,49 @@ public:
 	using reference = T&;
 	using const_reference = const T&;
 
-	/// <summary>ƒRƒ“ƒeƒi‚ª‹ó‚©‚Ç‚¤‚©‚ğ”»’è‚·‚é</summary>
+	/// <summary>ã‚³ãƒ³ãƒ†ãƒŠãŒç©ºã‹ã©ã†ã‹ã‚’åˆ¤å®šã™ã‚‹</summary>
 	bool empty() const
 	{
 		std::lock_guard<std::mutex> lock(m_mtx);
 		return m_container.empty();
 	}
 
-	/// <summary>ƒRƒ“ƒeƒi“à‚Ì—v‘f”‚ğ•Ô‚·</summary>
+	/// <summary>ã‚³ãƒ³ãƒ†ãƒŠå†…ã®è¦ç´ æ•°ã‚’è¿”ã™</summary>
 	size_t size() const
 	{
 		std::lock_guard<std::mutex> lock(m_mtx);
 		return m_container.size();
 	}
 
-	/// <summary>æ“ª—v‘f‚Ö‚ÌQÆ‚ğæ“¾‚·‚é</summary>
+	/// <summary>å…ˆé ­è¦ç´ ã¸ã®å‚ç…§ã‚’å–å¾—ã™ã‚‹</summary>
 	reference front()
 	{
 		std::lock_guard<std::mutex> lock(m_mtx);
 		return m_container.front();
 	}
 
-	/// <summary>æ“ª—v‘f‚Ö‚ÌQÆ‚ğæ“¾‚·‚é(const”Å)</summary>
+	/// <summary>å…ˆé ­è¦ç´ ã¸ã®å‚ç…§ã‚’å–å¾—ã™ã‚‹(constç‰ˆ)</summary>
 	const reference front() const
 	{
 		std::lock_guard<std::mutex> lock(m_mtx);
 		return m_container.front();
 	}
 
-	/// <summary>––”ö‚É—v‘f‚ğ’Ç‰Á‚·‚é</summary>
+	/// <summary>æœ«å°¾ã«è¦ç´ ã‚’è¿½åŠ ã™ã‚‹</summary>
 	void push(const T& x)
 	{
 		std::lock_guard<std::mutex> lock(m_mtx);
 		m_container.push_back(x);
 	}
 
-	/// <summary>æ“ª‚É—v‘f‚ğ’Ç‰Á‚·‚é(ƒ€[ƒu”Å)</summary>
+	/// <summary>å…ˆé ­ã«è¦ç´ ã‚’è¿½åŠ ã™ã‚‹(ãƒ ãƒ¼ãƒ–ç‰ˆ)</summary>
 	void push(T&& y)
 	{
 		std::lock_guard<std::mutex> lock(m_mtx);
 		m_container.push_back(std::forward<T>(y));
 	}
 
-	/// <summary>æ“ª‚É—v‘f‚ğ’Ç‰Á‚·‚é(emplace”Å)</summary>
+	/// <summary>å…ˆé ­ã«è¦ç´ ã‚’è¿½åŠ ã™ã‚‹(emplaceç‰ˆ)</summary>
 	template <class... Args>
 	void emplace(Args&&... args)
 	{
@@ -61,9 +61,9 @@ public:
 		m_container.emplace_back(args ...);
 	}
 
-	/// <summary>æ“ª—v‘f‚ğíœ‚·‚é</summary>
+	/// <summary>å…ˆé ­è¦ç´ ã‚’å‰Šé™¤ã™ã‚‹</summary>
 	/// <remarks>
-	/// ‹ó‚Ìó‘Ô‚ÅÀs‚·‚é‚Æ—áŠO‚ğ“Š‚°‚é
+	/// ç©ºã®çŠ¶æ…‹ã§å®Ÿè¡Œã™ã‚‹ã¨ä¾‹å¤–ã‚’æŠ•ã’ã‚‹
 	/// </remarks>
 	void pop()
 	{
