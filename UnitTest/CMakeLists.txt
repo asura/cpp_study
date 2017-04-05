@@ -5,4 +5,5 @@ include_directories(
 add_executable(Tester tester.cpp catch.hpp
   shared_ptr.cpp
   thread_safe_queue.cpp
+  BiConsumer.cpp
 )
