@@ -21,7 +21,7 @@ public:
 SCENARIO("2引数メソッドをキャプチャし、実行する", "[unit][BiConsumer]") {
 	Foo foo(2);
 	BiConsumer<int, int> sut([&](int x, int y) {
-		return foo.Calc(x, y);
+		foo.Calc(x, y);
 	});
 	sut(3, 4);
 	REQUIRE(foo.value() == 10);
