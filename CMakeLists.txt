@@ -3,5 +3,6 @@ project(cpp_study)
 
 include(cmake/flags.cpp.std.cmake)
 
+add_subdirectory(lib)
 add_subdirectory(Benchmark)
 add_subdirectory(UnitTest)
