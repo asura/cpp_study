@@ -1,5 +1,5 @@
 include_directories(
-  ${PROJECT_SOURCE_DIR}
+  ${PROJECT_SOURCE_DIR}/include
   ${PROJECT_SOURCE_DIR}/lib
   ${PROJECT_SOURCE_DIR}/test
   ${PROJECT_SOURCE_DIR}/vendor/Catch/single_include

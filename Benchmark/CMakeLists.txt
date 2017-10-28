@@ -1,5 +1,5 @@
 include_directories(
-  ${PROJECT_SOURCE_DIR}
+  ${PROJECT_SOURCE_DIR}/include
   ${PROJECT_SOURCE_DIR}/lib
   benchmark-1.1.0/include
   )
