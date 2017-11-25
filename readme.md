@@ -8,8 +8,12 @@ C++勉強用の環境。
 |テスト|Catch|
 |ログ出力|PLog|
 |性能評価|Google Benchmark|
+|コードフォーマッタ|ClangFormat|
 
 # 実行
+
+1. git clone https://github.com/asura/cpp_study.git
+1. git submodule update --init
 
 ## *nix
 
