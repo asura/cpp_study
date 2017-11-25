@@ -6,10 +6,11 @@ include_directories(
   ${PROJECT_SOURCE_DIR}/vendor/plog/include)
 
 add_executable(Tester tester.cpp
+  ConstructorVSFactoryMethodTest.cpp
   SplitString.cpp
+  optional.cpp
   shared_ptr.cpp
   thread_safe_queue.cpp
-  optional.cpp
 )
 
 target_link_libraries(
