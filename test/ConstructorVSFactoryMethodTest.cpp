@@ -1,3 +1,6 @@
+// Constructors or Static Factory Methods? - DZone Java
+// https://dzone.com/articles/constructors-or-static-factory-methods
+
 #include <string>
 
 namespace ConstructorVersion
