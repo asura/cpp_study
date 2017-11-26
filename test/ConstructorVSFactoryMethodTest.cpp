@@ -60,6 +60,44 @@ namespace FactoryMethodVersion
         }
     };
 }
+
+namespace OOVersion
+{
+    class Color
+    {
+    public:
+        virtual ~Color() = default;
+
+        virtual int hex() const = 0;
+    };
+
+    class HexColor : public Color
+    {
+        const int m_hex;
+
+    public:
+        HexColor(int h)
+            : m_hex(h)
+        {
+        }
+
+        int hex() const { return m_hex; }
+    };
+
+    class RGBColor : public Color
+    {
+        const HexColor m_origin;
+
+    public:
+        RGBColor(int red, int green, int blue)
+            : m_origin((red << 16) + (green << 8) + blue)
+        {
+        }
+
+        int hex() const { return m_origin.hex(); }
+    };
+}
+
 #include "catch.hpp"
 
 TEST_CASE("コンストラクタを使った構築", "[ConstructorVSFactoruMethod]")
@@ -84,4 +122,13 @@ TEST_CASE("ファクトリメソッドを使った構築", "[ConstructorVSFactor
 
     auto c3 = FactoryMethodVersion::Color::MakeFromRGB("123456");
     REQUIRE(c3.hex() == 0x123456);
+}
+
+TEST_CASE("OO版でのコンストラクタを使った構築", "[ConstructorVSFactoruMethod]")
+{
+    OOVersion::HexColor c1(0x123456);
+    REQUIRE(c1.hex() == 0x123456);
+
+    OOVersion::RGBColor c2(0x12, 0x34, 0x56);
+    REQUIRE(c2.hex() == 0x123456);
 }
