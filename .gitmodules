@@ -7,3 +7,6 @@
 [submodule "vendor/benchmark"]
 	path = vendor/benchmark
 	url = https://github.com/google/benchmark.git
+[submodule "vendor/gflags"]
+	path = vendor/gflags
+	url = https://github.com/gflags/gflags.git
