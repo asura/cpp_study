@@ -1,10 +1,12 @@
 cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
 project(cpp_study)
 
-include(cmake/flags.cpp.std.cmake)
+# C++規格
+set(CMAKE_CXX_STANDARD 17)
 
-add_subdirectory(lib)
-add_subdirectory(Benchmark)
-add_subdirectory(test)
-add_subdirectory(vendor/benchmark)
-add_subdirectory(vendor/gflags)
+add_subdirectory(exam)
+#add_subdirectory(lib)
+#add_subdirectory(Benchmark)
+#add_subdirectory(test)
+#add_subdirectory(vendor/benchmark)
+#add_subdirectory(vendor/gflags)
