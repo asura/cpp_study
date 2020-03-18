@@ -5,4 +5,14 @@ include_directories(
 add_executable(
   Tester
   Tester.cpp
+  tcmalloc.cpp
 )
+
+if(DEFINED TCMALLOC_PATH)
+
+  target_link_libraries(
+    Tester
+    tcmalloc
+  )
+
+endif()
