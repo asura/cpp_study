@@ -1,9 +1,6 @@
 [submodule "vendor/plog"]
 	path = vendor/plog
 	url = https://github.com/SergiusTheBest/plog.git
-[submodule "vendor/benchmark"]
-	path = vendor/benchmark
-	url = https://github.com/google/benchmark.git
 [submodule "vendor/gflags"]
 	path = vendor/gflags
 	url = https://github.com/gflags/gflags.git
