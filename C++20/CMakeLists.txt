@@ -9,13 +9,13 @@ project(
 set(CMAKE_CXX_STANDARD 20)
 
 add_executable(
-  Tester
+  TesterCpp20
   Tester.cpp
   version.cpp
 )
 
 target_include_directories(
-  Tester
+  TesterCpp20
   PRIVATE ${PROJECT_SOURCE_DIR}/../third_party/Catch2/single_include
   PRIVATE ${PROJECT_SOURCE_DIR}/../vendor/plog/include
 )
