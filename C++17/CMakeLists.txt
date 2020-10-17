@@ -11,6 +11,7 @@ set(CMAKE_CXX_STANDARD 17)
 add_executable(
   TesterCpp17
   Tester.cpp
+  nodiscard.cpp
 )
 
 target_include_directories(
