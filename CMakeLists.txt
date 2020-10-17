@@ -4,6 +4,8 @@ project(cpp_study)
 # C++規格
 set(CMAKE_CXX_STANDARD 17)
 
+set(CMAKE_CXX_FLAGS "-Wall")
+
 find_library(TCMALLOC_PATH tcmalloc)
 find_library(CLANG_PATH clang)
 
