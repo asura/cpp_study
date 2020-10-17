@@ -4,7 +4,7 @@
 
 int main(int argc, char* argv[])
 {
-    plog::init(plog::info, "TesterCpp20.log");
+    plog::init(plog::info, "TesterCpp11.log");
 
     LOGI << "START";
     int result = Catch::Session().run(argc, argv);
