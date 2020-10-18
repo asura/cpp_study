@@ -12,6 +12,7 @@ add_executable(
   TesterCpp17
   Tester.cpp
   nodiscard.cpp
+  optional.cpp
 )
 
 target_include_directories(
