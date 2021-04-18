@@ -11,6 +11,7 @@ set(CMAKE_CXX_STANDARD 14)
 add_executable(
   TesterCpp14
   Tester.cpp
+  unique_ptr.test.cpp
 )
 
 target_include_directories(
