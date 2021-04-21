@@ -13,6 +13,7 @@ find_package(Threads REQUIRED)
 add_executable(
   TesterCpp11
   Tester.cpp
+  template_method_in_template_class.cpp
   thread.test.cpp
 )
 
